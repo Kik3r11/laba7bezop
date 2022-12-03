@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+	function Shifr(){ 
+	var ob1 = prompt('Введите строку на русском языке');   
+    var str = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    var str1 = "ЯЮЭЬЫЪЩШЧЦХФУТСРПОНМЛКЙИЗЖЁЕДГВБА";
+    var str2 = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    var str3 = "яюэьыъщшчцхфутсрпонмлкйизжёедгвба";
+    var result = "";
+    for (var i = 0; i < ob1.length; i++) 
+    {
+        var zashifr = ob1.charAt(i);
+        var regexp =  /[а-я][А-Я]/; 
+        if (regexp.test(ob1[i])) 
+        {
+            result += ob1[i];	
+        }
+        else if (ob1[i] === ob1[i].toUpperCase()) 
+        {
+            var a = str.indexOf(zashifr);
+            var b = str1.charAt(a);
+            result += b;
+        } 
+        else 
+        {
+	        var c = str2.indexOf(zashifr);
+	        var d = str3.charAt(c);
+	        result += d;
+        }
+    }
+    return res.innerHTML = result;
+}
+	function Shifr1(){ 
+	var ob1 = prompt('Введите строку на английском языке');   
+    var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var str1 = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+    var str2 = "abcdefghijklmnopqrstuvwxyz";
+    var str3 = "zyxwvutsrqponmlkjihgfedcba";
+    var result = "";
+    for (var i = 0; i < ob1.length; i++) 
+    {
+        var zashifr = ob1.charAt(i);
+        var regexp =  /[a-z][A-Z]/;
+        if (regexp.test(ob1[i])) 
+        {
+            result += ob1[i];	
+        }
+        else if (ob1[i] === ob1[i].toUpperCase()) 
+        {
+            var a = str.indexOf(zashifr);
+            var b = str1.charAt(a);
+            result += b;
+        } 
+        else 
+        {
+	        var c = str2.indexOf(zashifr);
+	        var d = str3.charAt(c);
+	        result += d;
+        }
+    }
+    return res1.innerHTML = result;
+}
+
+	</script>
+</head>
+<body>
+<button id="button1" onclick="Shifr();">Шифр на русском</button>
+<button id="button1" onclick="Shifr1();">Шифр на английском</button>
+<p id="res"></p>
+<p id="res1"></p>
+</body>
+</html>
